@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Balham.otf">
+            <string>Balham</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="OpenQuizz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="CHr-KX-9s7">
+                                <rect key="frame" x="169.5" y="593" width="37" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="37" id="CHe-1b-iF4"/>
+                                    <constraint firstAttribute="height" constant="37" id="iQ3-4R-d5U"/>
+                                </constraints>
+                            </activityIndicatorView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vr2-lR-pYa" customClass="QuestionView" customModule="OpenQuizz" customModuleProvider="target">
+                                <rect key="frame" x="65" y="33" width="245" height="245"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quelle est la question à poser ?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Aa-EP-kK4">
+                                        <rect key="frame" x="8" y="8" width="229" height="229"/>
+                                        <fontDescription key="fontDescription" name="Balham" family="Balham" pointSize="25"/>
+                                        <color key="textColor" red="0.97251504659999999" green="0.97304004430000002" blue="0.9479208589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" name="Balham" family="Balham" pointSize="50"/>
+                                        </variation>
+                                    </label>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="Icon Correct" translatesAutoresizingMaskIntoConstraints="NO" id="ISp-JR-gQB">
+                                        <rect key="frame" x="104" y="202" width="36" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="ISp-JR-gQB" secondAttribute="height" multiplier="36:35" id="9tN-SC-QNH"/>
+                                            <constraint firstAttribute="width" constant="36" id="Vdu-wh-GEa">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="70"/>
+                                            </constraint>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.74823302030000005" green="0.77231997249999995" blue="0.79311770199999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="vr2-lR-pYa" secondAttribute="height" multiplier="1:1" id="GIz-wV-Vf2"/>
+                                    <constraint firstAttribute="bottom" secondItem="0Aa-EP-kK4" secondAttribute="bottom" constant="8" id="KEI-t9-b3P"/>
+                                    <constraint firstAttribute="width" constant="245" id="OPv-Uc-Wrc">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="490"/>
+                                    </constraint>
+                                    <constraint firstAttribute="bottom" secondItem="ISp-JR-gQB" secondAttribute="bottom" constant="8" id="Xaj-eG-zne"/>
+                                    <constraint firstItem="0Aa-EP-kK4" firstAttribute="top" secondItem="vr2-lR-pYa" secondAttribute="top" constant="8" id="fLO-xc-Gxn"/>
+                                    <constraint firstItem="0Aa-EP-kK4" firstAttribute="leading" secondItem="vr2-lR-pYa" secondAttribute="leading" constant="8" id="r2T-tc-qEm"/>
+                                    <constraint firstAttribute="trailing" secondItem="0Aa-EP-kK4" secondAttribute="trailing" constant="8" id="t9R-qg-D9V"/>
+                                    <constraint firstItem="ISp-JR-gQB" firstAttribute="centerX" secondItem="vr2-lR-pYa" secondAttribute="centerX" id="vYi-wb-ayW"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="icon" destination="ISp-JR-gQB" id="crV-OF-72S"/>
+                                    <outlet property="label" destination="0Aa-EP-kK4" id="d36-gX-oVm"/>
+                                </connections>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rv7-xc-Qwr">
+                                <rect key="frame" x="87.5" y="576" width="200" height="71"/>
+                                <color key="backgroundColor" red="0.36025357250000001" green="0.55648463960000005" blue="0.78079479929999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="71" id="2E5-pa-PbK"/>
+                                    <constraint firstAttribute="width" constant="200" id="Ca9-Cp-dbd"/>
+                                    <constraint firstAttribute="width" constant="200" id="PaL-vy-P6n">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="400"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="71" id="TWC-Om-lh6">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="140"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Balham" family="Balham" pointSize="29"/>
+                                <state key="normal" title="New Game">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="2E5-pa-PbK"/>
+                                        <exclude reference="Ca9-Cp-dbd"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Balham" family="Balham" pointSize="60"/>
+                                </variation>
+                                <connections>
+                                    <action selector="didTapNewGameButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="uOF-q1-dRk"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 / 10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WjN-23-CBj">
+                                <rect key="frame" x="157" y="286" width="61" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="61" id="RCC-Qs-tjM">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="150"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="47" id="U3i-4k-lvD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Balham" family="Balham" pointSize="25"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="RCC-Qs-tjM"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Balham" family="Balham" pointSize="50"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.34241300819999998" green="0.41808691619999999" blue="0.50959968570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="WjN-23-CBj" firstAttribute="top" secondItem="vr2-lR-pYa" secondAttribute="bottom" constant="8" id="65Z-Co-YX2"/>
+                            <constraint firstItem="WjN-23-CBj" firstAttribute="width" secondItem="rv7-xc-Qwr" secondAttribute="width" id="BuB-dk-QcR"/>
+                            <constraint firstItem="CHr-KX-9s7" firstAttribute="centerX" secondItem="rv7-xc-Qwr" secondAttribute="centerX" id="CRv-Dh-Qeq"/>
+                            <constraint firstItem="rv7-xc-Qwr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DNA-qZ-XgH"/>
+                            <constraint firstItem="vr2-lR-pYa" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Mf4-h8-3Gj"/>
+                            <constraint firstItem="vr2-lR-pYa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="O36-5Y-Qzm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WjN-23-CBj" secondAttribute="trailing" constant="20" id="Uaa-FN-Rof"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="rv7-xc-Qwr" secondAttribute="bottom" constant="20" id="W2h-pu-sdi"/>
+                            <constraint firstItem="rv7-xc-Qwr" firstAttribute="bottom" secondItem="vr2-lR-pYa" secondAttribute="bottom" id="e7B-VN-RQQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rv7-xc-Qwr" secondAttribute="trailing" constant="20" id="gnM-nK-W09"/>
+                            <constraint firstItem="WjN-23-CBj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iip-Ec-9FM"/>
+                            <constraint firstItem="vr2-lR-pYa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="13" id="nay-f1-jHd"/>
+                            <constraint firstItem="CHr-KX-9s7" firstAttribute="centerY" secondItem="rv7-xc-Qwr" secondAttribute="centerY" id="t4L-z1-J6I"/>
+                            <constraint firstItem="vr2-lR-pYa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="uCX-QX-EMz"/>
+                            <constraint firstItem="WjN-23-CBj" firstAttribute="top" secondItem="vr2-lR-pYa" secondAttribute="top" id="xUG-IH-Oyq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Uaa-FN-Rof"/>
+                                <exclude reference="gnM-nK-W09"/>
+                                <exclude reference="Mf4-h8-3Gj"/>
+                                <exclude reference="uCX-QX-EMz"/>
+                                <exclude reference="BuB-dk-QcR"/>
+                                <exclude reference="xUG-IH-Oyq"/>
+                                <exclude reference="e7B-VN-RQQ"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <include reference="Uaa-FN-Rof"/>
+                                <exclude reference="W2h-pu-sdi"/>
+                                <include reference="gnM-nK-W09"/>
+                                <include reference="Mf4-h8-3Gj"/>
+                                <exclude reference="O36-5Y-Qzm"/>
+                                <exclude reference="nay-f1-jHd"/>
+                                <include reference="uCX-QX-EMz"/>
+                                <exclude reference="65Z-Co-YX2"/>
+                                <include reference="BuB-dk-QcR"/>
+                                <exclude reference="iip-Ec-9FM"/>
+                                <include reference="xUG-IH-Oyq"/>
+                                <exclude reference="DNA-qZ-XgH"/>
+                                <include reference="e7B-VN-RQQ"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="CHr-KX-9s7" id="gMQ-pV-hfa"/>
+                        <outlet property="newGameButton" destination="rv7-xc-Qwr" id="ZHt-lY-2uF"/>
+                        <outlet property="questionView" destination="vr2-lR-pYa" id="eMo-bk-emH"/>
+                        <outlet property="scoreLabel" destination="WjN-23-CBj" id="BEI-YU-fKa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="125.4872563718141"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Icon Correct" width="36" height="35"/>
+    </resources>
+</document>
